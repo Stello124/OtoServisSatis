@@ -174,9 +174,14 @@ namespace OtoServisSatis.Data.Migrations
                 values: new object[] { 1, "Admin" });
 
             migrationBuilder.InsertData(
+                table: "Satislar",
+                columns: new[] { "Id", "AracId", "MusteriId", "SatisFiyati", "SatisTarihi" },
+                values: new object[] { 1, 1, 1, 1m, new DateTime(2023, 11, 6, 16, 32, 22, 669, DateTimeKind.Local).AddTicks(9807) });
+
+            migrationBuilder.InsertData(
                 table: "Kullanicilar",
                 columns: new[] { "Id", "Adi", "AktifMi", "EklenmeTarihi", "Email", "KullaniciAdi", "RolId", "Sifre", "Soyadi", "Telefon" },
-                values: new object[] { 1, "Admin", true, new DateTime(2023, 11, 6, 14, 57, 13, 999, DateTimeKind.Local).AddTicks(5083), "admin@otoservissatis.tc", "admin", 1, "123456", "admin", "0850" });
+                values: new object[] { 1, "Admin", true, new DateTime(2023, 11, 6, 16, 32, 22, 669, DateTimeKind.Local).AddTicks(9785), "admin@otoservissatis.tc", "admin", 1, "123456", "admin", "0850" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Araclar_MarkaId",

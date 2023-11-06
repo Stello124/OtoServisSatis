@@ -12,7 +12,7 @@ using OtoServisSatis.Data;
 namespace OtoServisSatis.Data.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20231106115714_InitialCreate")]
+    [Migration("20231106133222_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -130,7 +130,7 @@ namespace OtoServisSatis.Data.Migrations
                             Id = 1,
                             Adi = "Admin",
                             AktifMi = true,
-                            EklenmeTarihi = new DateTime(2023, 11, 6, 14, 57, 13, 999, DateTimeKind.Local).AddTicks(5083),
+                            EklenmeTarihi = new DateTime(2023, 11, 6, 16, 32, 22, 669, DateTimeKind.Local).AddTicks(9785),
                             Email = "admin@otoservissatis.tc",
                             KullaniciAdi = "admin",
                             RolId = 1,
@@ -256,6 +256,16 @@ namespace OtoServisSatis.Data.Migrations
                     b.HasIndex("MusteriId");
 
                     b.ToTable("Satislar");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AracId = 1,
+                            MusteriId = 1,
+                            SatisFiyati = 1m,
+                            SatisTarihi = new DateTime(2023, 11, 6, 16, 32, 22, 669, DateTimeKind.Local).AddTicks(9807)
+                        });
                 });
 
             modelBuilder.Entity("OtoServisSatis.Entities.Servis", b =>
