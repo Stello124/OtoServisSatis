@@ -16,7 +16,7 @@ namespace OtoServisSatis.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
 
-            optionsBuilder.UseSqlServer(@"Server=DESKTOP-8ECA1KB;Database=OtoServisSatis;Persist Security Info=True;Trusted_Connection=True;TrustServerCertificate=Yes;MultipleActiveResultSets=true");
+            optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=OtoServisSatis;Persist Security Info=True;Trusted_Connection=True;TrustServerCertificate=Yes;MultipleActiveResultSets=true");
             base.OnConfiguring(optionsBuilder);
 
         }
