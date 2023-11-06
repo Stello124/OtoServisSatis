@@ -12,8 +12,8 @@ using OtoServisSatis.Data;
 namespace OtoServisSatis.Data.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20231106133222_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20231106192849_1001")]
+    partial class _1001
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -130,7 +130,7 @@ namespace OtoServisSatis.Data.Migrations
                             Id = 1,
                             Adi = "Admin",
                             AktifMi = true,
-                            EklenmeTarihi = new DateTime(2023, 11, 6, 16, 32, 22, 669, DateTimeKind.Local).AddTicks(9785),
+                            EklenmeTarihi = new DateTime(2023, 11, 6, 22, 28, 49, 409, DateTimeKind.Local).AddTicks(1635),
                             Email = "admin@otoservissatis.tc",
                             KullaniciAdi = "admin",
                             RolId = 1,
@@ -195,8 +195,8 @@ namespace OtoServisSatis.Data.Migrations
                         .HasColumnType("nvarchar(11)");
 
                     b.Property<string>("Telefon")
-                        .HasMaxLength(12)
-                        .HasColumnType("nvarchar(12)");
+                        .HasMaxLength(15)
+                        .HasColumnType("nvarchar(15)");
 
                     b.HasKey("Id");
 
@@ -256,16 +256,6 @@ namespace OtoServisSatis.Data.Migrations
                     b.HasIndex("MusteriId");
 
                     b.ToTable("Satislar");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            AracId = 1,
-                            MusteriId = 1,
-                            SatisFiyati = 1m,
-                            SatisTarihi = new DateTime(2023, 11, 6, 16, 32, 22, 669, DateTimeKind.Local).AddTicks(9807)
-                        });
                 });
 
             modelBuilder.Entity("OtoServisSatis.Entities.Servis", b =>
@@ -278,8 +268,8 @@ namespace OtoServisSatis.Data.Migrations
 
                     b.Property<string>("AracPlaka")
                         .IsRequired()
-                        .HasMaxLength(8)
-                        .HasColumnType("nvarchar(8)");
+                        .HasMaxLength(15)
+                        .HasColumnType("nvarchar(15)");
 
                     b.Property<string>("AracSorunu")
                         .IsRequired()

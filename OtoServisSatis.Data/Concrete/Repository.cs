@@ -14,13 +14,17 @@ namespace OtoServisSatis.Data.Concrete
 	{
 
 		internal DatabaseContext _context;
+
 		internal DbSet<T> _dbSet;
+
 
 		public Repository(DatabaseContext context)
 		{
 			_context = context;
 			_dbSet = _context.Set<T>();
 		}
+
+		
 		public void Add(T entity)
 		{
 			_dbSet.Add(entity);
@@ -56,19 +60,19 @@ namespace OtoServisSatis.Data.Concrete
 			return _dbSet.ToList();
 		}
 
-		public List<T> GetAll(Expression<Func<T, bool>> expressions)
+		public List<T> GetAll(Expression<Func<T, bool>> expression)
 		{
-			return _dbSet.Where(expressions).ToList();
+			return _dbSet.Where(expression).ToList();
 		}
 
 		public async Task<List<T>> GetAllAsync()
 		{
-			return await _dbSet.ToListAsync();
+			 return await _dbSet.ToListAsync();
 		}
 
-		public async Task<List<T>> GetAllAsync(Expression<Func<T, bool>> expressions)
+		public async Task<List<T>> GetAllAsync(Expression<Func<T, bool>> expression)
 		{
-			return await _dbSet.Where(expressions).ToListAsync();
+			return await _dbSet.Where(expression).ToListAsync();
 		}
 
 		public Task<T> GetAsync(Expression<Func<T, bool>> expression)
