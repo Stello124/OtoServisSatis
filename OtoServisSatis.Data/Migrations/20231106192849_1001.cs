@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace OtoServisSatis.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class _1001 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -49,7 +49,7 @@ namespace OtoServisSatis.Data.Migrations
                     ServistenCikisTarihi = table.Column<DateTime>(type: "datetime2", nullable: false),
                     YapilanIslemler = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     GarantiKapsamindaMi = table.Column<bool>(type: "bit", nullable: false),
-                    AracPlaka = table.Column<string>(type: "nvarchar(8)", maxLength: 8, nullable: false),
+                    AracPlaka = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
                     Marka = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Model = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     KasaTipi = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
@@ -126,7 +126,7 @@ namespace OtoServisSatis.Data.Migrations
                     TcNo = table.Column<string>(type: "nvarchar(11)", maxLength: 11, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Adres = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
-                    Telefon = table.Column<string>(type: "nvarchar(12)", maxLength: 12, nullable: true),
+                    Telefon = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: true),
                     Notlar = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
@@ -159,13 +159,13 @@ namespace OtoServisSatis.Data.Migrations
                         column: x => x.AracId,
                         principalTable: "Araclar",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
                         name: "FK_Satislar_Musteriler_MusteriId",
                         column: x => x.MusteriId,
                         principalTable: "Musteriler",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.InsertData(
@@ -174,14 +174,9 @@ namespace OtoServisSatis.Data.Migrations
                 values: new object[] { 1, "Admin" });
 
             migrationBuilder.InsertData(
-                table: "Satislar",
-                columns: new[] { "Id", "AracId", "MusteriId", "SatisFiyati", "SatisTarihi" },
-                values: new object[] { 1, 1, 1, 1m, new DateTime(2023, 11, 6, 16, 32, 22, 669, DateTimeKind.Local).AddTicks(9807) });
-
-            migrationBuilder.InsertData(
                 table: "Kullanicilar",
                 columns: new[] { "Id", "Adi", "AktifMi", "EklenmeTarihi", "Email", "KullaniciAdi", "RolId", "Sifre", "Soyadi", "Telefon" },
-                values: new object[] { 1, "Admin", true, new DateTime(2023, 11, 6, 16, 32, 22, 669, DateTimeKind.Local).AddTicks(9785), "admin@otoservissatis.tc", "admin", 1, "123456", "admin", "0850" });
+                values: new object[] { 1, "Admin", true, new DateTime(2023, 11, 6, 22, 28, 49, 409, DateTimeKind.Local).AddTicks(1635), "admin@otoservissatis.tc", "admin", 1, "123456", "admin", "0850" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Araclar_MarkaId",
