@@ -1,7 +1,6 @@
-using Microsoft.EntityFrameworkCore.Storage;
 using OtoServisSatis.Data;
-using OtoServisSatis.Service.Abstract;
-using OtoServisSatis.Service.Concrete;
+using OtoServisSatis.Servis.Abstract;
+using OtoServisSatis.Servis.Concrete;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,9 +9,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<DatabaseContext>();
 
-builder.Services.AddTransient(typeof(IService<>),typeof(Service<>));
-
-builder.Services.AddMvc();
+builder.Services.AddTransient(typeof(IService<>), typeof(Service<>));
 
 var app = builder.Build();
 
@@ -32,8 +29,8 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllerRoute(
-            name : "areas",
-            pattern : "{area:exists}/{controller=Main}/{action=Index}/{id?}"
+            name: "admin",
+            pattern: "{area:exists}/{controller=Main}/{action=Index}/{id?}"
           );
 
 app.MapControllerRoute(

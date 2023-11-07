@@ -12,8 +12,8 @@ using OtoServisSatis.Data;
 namespace OtoServisSatis.Data.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20231106192849_1001")]
-    partial class _1001
+    [Migration("20231106130731_initialCreate")]
+    partial class initialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -130,7 +130,7 @@ namespace OtoServisSatis.Data.Migrations
                             Id = 1,
                             Adi = "Admin",
                             AktifMi = true,
-                            EklenmeTarihi = new DateTime(2023, 11, 6, 22, 28, 49, 409, DateTimeKind.Local).AddTicks(1635),
+                            EklenmeTarihi = new DateTime(2023, 11, 6, 16, 7, 31, 584, DateTimeKind.Local).AddTicks(8676),
                             Email = "admin@otoservissatis.tc",
                             KullaniciAdi = "admin",
                             RolId = 1,
