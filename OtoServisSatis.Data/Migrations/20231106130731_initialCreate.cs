@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace OtoServisSatis.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class _1001 : Migration
+    public partial class initialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -176,7 +176,7 @@ namespace OtoServisSatis.Data.Migrations
             migrationBuilder.InsertData(
                 table: "Kullanicilar",
                 columns: new[] { "Id", "Adi", "AktifMi", "EklenmeTarihi", "Email", "KullaniciAdi", "RolId", "Sifre", "Soyadi", "Telefon" },
-                values: new object[] { 1, "Admin", true, new DateTime(2023, 11, 6, 22, 28, 49, 409, DateTimeKind.Local).AddTicks(1635), "admin@otoservissatis.tc", "admin", 1, "123456", "admin", "0850" });
+                values: new object[] { 1, "Admin", true, new DateTime(2023, 11, 6, 16, 7, 31, 584, DateTimeKind.Local).AddTicks(8676), "admin@otoservissatis.tc", "admin", 1, "123456", "admin", "0850" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Araclar_MarkaId",

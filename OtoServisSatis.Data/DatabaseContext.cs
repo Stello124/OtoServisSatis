@@ -3,7 +3,7 @@ using OtoServisSatis.Entities;
 
 namespace OtoServisSatis.Data
 {
-    public class DatabaseContext:DbContext
+    public class DatabaseContext : DbContext
     {
         public DbSet<Arac> Araclar { get; set; }
         public DbSet<Kullanici> Kullanicilar { get; set; }
@@ -14,7 +14,7 @@ namespace OtoServisSatis.Data
         public DbSet<Servis> Servisler { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=OtoServisSatis;Persist Security Info=True;Trusted_Connection=True;TrustServerCertificate=Yes;MultipleActiveResultSets=true");  
+            optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=OtoServisSatis;Persist Security Info=True;Trusted_Connection=True;TrustServerCertificate=Yes;MultipleActiveResultSets=true");
             base.OnConfiguring(optionsBuilder);
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -23,8 +23,8 @@ namespace OtoServisSatis.Data
 
             modelBuilder.Entity<Marka>().Property(m => m.Adi).IsRequired().HasColumnType("varchar(50)");
             modelBuilder.Entity<Rol>().Property(m => m.Adi).IsRequired().HasColumnType("varchar(50)");
-            modelBuilder.Entity<Rol>().HasData(new Rol 
-            { 
+            modelBuilder.Entity<Rol>().HasData(new Rol
+            {
                 Id = 1,
                 Adi = "Admin"
             });
@@ -38,7 +38,7 @@ namespace OtoServisSatis.Data
                 KullaniciAdi = "admin",
                 Sifre = "123456",
                 //Rol = new Rol { Id = 1},
-                RolId = 1, 
+                RolId = 1,
                 Soyadi = "admin",
                 Telefon = "0850",
             });
