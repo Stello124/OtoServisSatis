@@ -1,10 +1,10 @@
-﻿@model IEnumerable<OtoServisSatis.Entities.Arac>
+﻿@model IEnumerable<OtoServisSatis.Entities.Musteri>
 
 @{
-    ViewData["Title"] = "Araçlar";
+    ViewData["Title"] = "Müşteriler";
 }
 
-<h1>Araçlar</h1>
+<h1>Müşteriler</h1>
 
 <p>
     <a class="btn btn-outline-primary" asp-action="Create">Yeni Ekle</a>
@@ -13,28 +13,28 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Renk)
+                @Html.DisplayNameFor(model => model.Adi)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Fiyati)
+                @Html.DisplayNameFor(model => model.Soyadi)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Modeli)
+                @Html.DisplayNameFor(model => model.TcNo)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.KasaTipi)
+                @Html.DisplayNameFor(model => model.Email)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ModelYili)
+                @Html.DisplayNameFor(model => model.Adres)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.SatistaMi)
+                @Html.DisplayNameFor(model => model.Telefon)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Notlar)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Marka)
+                @Html.DisplayNameFor(model => model.Arac)
             </th>
             <th></th>
         </tr>
@@ -44,28 +44,28 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Renk)
+                    @Html.DisplayFor(modelItem => item.Adi)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Fiyati)
+                    @Html.DisplayFor(modelItem => item.Soyadi)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Modeli)
+                    @Html.DisplayFor(modelItem => item.TcNo)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.KasaTipi)
+                    @Html.DisplayFor(modelItem => item.Email)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.ModelYili)
+                    @Html.DisplayFor(modelItem => item.Adres)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.SatistaMi)
+                    @Html.DisplayFor(modelItem => item.Telefon)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Notlar)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Marka.Adi)
+                    @Html.DisplayFor(modelItem => item.Arac.Modeli)
                 </td>
                 <td>
                     <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Id">Düzenle</a> |
