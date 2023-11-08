@@ -1,51 +1,51 @@
-﻿@model OtoServisSatis.Entities.Arac
+﻿@model OtoServisSatis.Entities.Musteri
 
 @{
-    ViewData["Title"] = "Araç Sil";
+    ViewData["Title"] = "Sil";
 }
 
-<h1>Araç Sil</h1>
+<h1>Sil</h1>
 
-<h3>Araç silmek istiyor musunuz?</h3>
+<h3>Silmek istiyor musunuz?</h3>
 <div>
-    <h4>Araç</h4>
+    <h4>Müşteri</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Renk)
+            @Html.DisplayNameFor(model => model.Adi)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Renk)
+            @Html.DisplayFor(model => model.Adi)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Fiyati)
+            @Html.DisplayNameFor(model => model.Soyadi)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Fiyati)
+            @Html.DisplayFor(model => model.Soyadi)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Modeli)
+            @Html.DisplayNameFor(model => model.TcNo)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Modeli)
+            @Html.DisplayFor(model => model.TcNo)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.KasaTipi)
+            @Html.DisplayNameFor(model => model.Email)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.KasaTipi)
+            @Html.DisplayFor(model => model.Email)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ModelYili)
+            @Html.DisplayNameFor(model => model.Adres)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ModelYili)
+            @Html.DisplayFor(model => model.Adres)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SatistaMi)
+            @Html.DisplayNameFor(model => model.Telefon)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SatistaMi)
+            @Html.DisplayFor(model => model.Telefon)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Notlar)
@@ -54,10 +54,10 @@
             @Html.DisplayFor(model => model.Notlar)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Marka)
+            @Html.DisplayNameFor(model => model.Arac)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Marka.Adi)
+            @Html.DisplayFor(model => model.Arac.KasaTipi)
         </dd>
     </dl>
     

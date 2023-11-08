@@ -1,9 +1,9 @@
 ﻿using OtoServisSatis.Data;
 using OtoServisSatis.Data.Concrete;
 using OtoServisSatis.Entities;
-using OtoServisSatis.Servis.Abstract;
+using OtoServisSatis.Service.Abstract;
 
-namespace OtoServisSatis.Servis.Concrete
+namespace OtoServisSatis.Service.Concrete
 {
     public class Service<T> : Repository<T>, IService<T> where T : class, IEntity, new()
     {

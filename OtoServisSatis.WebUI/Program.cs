@@ -1,6 +1,6 @@
 using OtoServisSatis.Data;
-using OtoServisSatis.Servis.Abstract;
-using OtoServisSatis.Servis.Concrete;
+using OtoServisSatis.Service.Abstract;
+using OtoServisSatis.Service.Concrete;
 
 var builder = WebApplication.CreateBuilder(args);
 
