@@ -23,7 +23,7 @@ namespace OtoServisSatis.Data.Migrations
                 keyColumn: "Id",
                 keyValue: 1,
                 column: "EklenmeTarihi",
-                value: new DateTime(2023, 11, 9, 14, 13, 34, 131, DateTimeKind.Local).AddTicks(7701));
+                value: new DateTime(2023, 11, 9, 14, 13, 26, 387, DateTimeKind.Local).AddTicks(5483));
         }
 
         /// <inheritdoc />
@@ -38,7 +38,7 @@ namespace OtoServisSatis.Data.Migrations
                 keyColumn: "Id",
                 keyValue: 1,
                 column: "EklenmeTarihi",
-                value: new DateTime(2023, 11, 8, 20, 27, 15, 693, DateTimeKind.Local).AddTicks(3094));
+                value: new DateTime(2023, 11, 8, 16, 3, 10, 556, DateTimeKind.Local).AddTicks(729));
         }
     }
 }

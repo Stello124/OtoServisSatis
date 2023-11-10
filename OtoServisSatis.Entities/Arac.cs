@@ -28,15 +28,19 @@ namespace OtoServisSatis.Entities
 
         [Display(Name = "Satışta mı?")]
         public bool SatistaMi { get; set; }
+
         [Display(Name = "Anasayfa?")]
         public bool Anasayfa { get; set; }
 
         [Required(ErrorMessage = "{0} Boş Bırakılamaz!")]
         public string Notlar { get; set; }
+
         [StringLength(100)]
         public string? Resim1 { get; set; }
+
         [StringLength(100)]
         public string? Resim2 { get; set; }
+
         [StringLength(100)]
         public string? Resim3 { get; set; }
         public virtual Marka? Marka { get; set; } //Araç sınıfı ile Marka sınıf arasında bağlantı

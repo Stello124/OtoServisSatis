@@ -18,7 +18,7 @@ namespace OtoServisSatis.Data.Concrete
 
         public async Task<List<Arac>> GetCustomCarList()
         {
-            return await _dbSet.AsNoTracking().Include(x => x.Marka).ToListAsync();
+            return await _dbSet.AsNoTracking().Include(x=>x.Marka).ToListAsync();
         }
 
         public async Task<List<Arac>> GetCustomCarList(Expression<Func<Arac, bool>> expression)

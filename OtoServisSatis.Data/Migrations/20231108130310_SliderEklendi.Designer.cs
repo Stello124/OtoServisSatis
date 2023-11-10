@@ -12,8 +12,8 @@ using OtoServisSatis.Data;
 namespace OtoServisSatis.Data.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20231108172715_SliderHatasiDuzeltildi")]
-    partial class SliderHatasiDuzeltildi
+    [Migration("20231108130310_SliderEklendi")]
+    partial class SliderEklendi
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -140,7 +140,7 @@ namespace OtoServisSatis.Data.Migrations
                             Id = 1,
                             Adi = "Admin",
                             AktifMi = true,
-                            EklenmeTarihi = new DateTime(2023, 11, 8, 20, 27, 15, 693, DateTimeKind.Local).AddTicks(3094),
+                            EklenmeTarihi = new DateTime(2023, 11, 8, 16, 3, 10, 556, DateTimeKind.Local).AddTicks(729),
                             Email = "admin@otoservissatis.tc",
                             KullaniciAdi = "admin",
                             RolId = 1,

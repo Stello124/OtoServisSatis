@@ -12,8 +12,8 @@ using OtoServisSatis.Data;
 namespace OtoServisSatis.Data.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20231108130309_SliderEklendi")]
-    partial class SliderEklendi
+    [Migration("20231108125035_AracResimEklendi")]
+    partial class AracResimEklendi
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -140,7 +140,7 @@ namespace OtoServisSatis.Data.Migrations
                             Id = 1,
                             Adi = "Admin",
                             AktifMi = true,
-                            EklenmeTarihi = new DateTime(2023, 11, 8, 16, 3, 9, 584, DateTimeKind.Local).AddTicks(7975),
+                            EklenmeTarihi = new DateTime(2023, 11, 8, 15, 50, 35, 292, DateTimeKind.Local).AddTicks(2783),
                             Email = "admin@otoservissatis.tc",
                             KullaniciAdi = "admin",
                             RolId = 1,
@@ -325,7 +325,7 @@ namespace OtoServisSatis.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Servis");
+                    b.ToTable("Servisler");
                 });
 
             modelBuilder.Entity("OtoServisSatis.Entities.Arac", b =>

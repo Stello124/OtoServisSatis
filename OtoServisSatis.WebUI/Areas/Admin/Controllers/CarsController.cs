@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using OtoServisSatis.Entities;
 using OtoServisSatis.Service.Abstract;
-using OtoServisSatis.Service.Concrete;
 using OtoServisSatis.WebUI.Utils;
 
 namespace OtoServisSatis.WebUI.Areas.Admin.Controllers
@@ -23,7 +22,6 @@ namespace OtoServisSatis.WebUI.Areas.Admin.Controllers
         // GET: CarsController
         public async Task<IActionResult> IndexAsync()
         {
-            
             var model = await _service.GetCustomCarList();
             return View(model);
         }
@@ -50,9 +48,9 @@ namespace OtoServisSatis.WebUI.Areas.Admin.Controllers
             {
                 try
                 {
-                    arac.Resim1=await FileHelper.FileLoaderAsync(Resim1, "/Img/Cars/");
-                    arac.Resim2=await FileHelper.FileLoaderAsync(Resim2, filePath: "/Img/Cars/");
-                    arac.Resim3=await FileHelper.FileLoaderAsync(Resim3, "/Img/Cars/");
+                    arac.Resim1 = await FileHelper.FileLoaderAsync(Resim1, "/Img/Cars/");
+                    arac.Resim2 = await FileHelper.FileLoaderAsync(Resim2, filePath: "/Img/Cars/");
+                    arac.Resim3 = await FileHelper.FileLoaderAsync(Resim3, "/Img/Cars/");
                     await _service.AddAsync(arac);
                     await _service.SaveAsync();
                     return RedirectToAction(nameof(Index));
@@ -95,7 +93,6 @@ namespace OtoServisSatis.WebUI.Areas.Admin.Controllers
                     {
                         arac.Resim3 = await FileHelper.FileLoaderAsync(Resim3, "/Img/Cars/");
                     }
-                    
                     _service.Update(arac);
                     await _service.SaveAsync();
                     return RedirectToAction(nameof(Index));

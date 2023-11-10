@@ -6,24 +6,11 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace OtoServisSatis.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class SliderHatasiDuzeltildi : Migration
+    public partial class SliderEklendi : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropPrimaryKey(
-                name: "PK_Servis",
-                table: "Servis");
-
-            migrationBuilder.RenameTable(
-                name: "Servis",
-                newName: "Servisler");
-
-            migrationBuilder.AddPrimaryKey(
-                name: "PK_Servisler",
-                table: "Servisler",
-                column: "Id");
-
             migrationBuilder.CreateTable(
                 name: "Sliders",
                 columns: table => new
@@ -45,7 +32,7 @@ namespace OtoServisSatis.Data.Migrations
                 keyColumn: "Id",
                 keyValue: 1,
                 column: "EklenmeTarihi",
-                value: new DateTime(2023, 11, 8, 20, 27, 15, 693, DateTimeKind.Local).AddTicks(3094));
+                value: new DateTime(2023, 11, 8, 16, 3, 10, 556, DateTimeKind.Local).AddTicks(729));
         }
 
         /// <inheritdoc />
@@ -54,25 +41,12 @@ namespace OtoServisSatis.Data.Migrations
             migrationBuilder.DropTable(
                 name: "Sliders");
 
-            migrationBuilder.DropPrimaryKey(
-                name: "PK_Servisler",
-                table: "Servisler");
-
-            migrationBuilder.RenameTable(
-                name: "Servisler",
-                newName: "Servis");
-
-            migrationBuilder.AddPrimaryKey(
-                name: "PK_Servis",
-                table: "Servis",
-                column: "Id");
-
             migrationBuilder.UpdateData(
                 table: "Kullanicilar",
                 keyColumn: "Id",
                 keyValue: 1,
                 column: "EklenmeTarihi",
-                value: new DateTime(2023, 11, 8, 16, 3, 9, 584, DateTimeKind.Local).AddTicks(7975));
+                value: new DateTime(2023, 11, 8, 15, 50, 35, 292, DateTimeKind.Local).AddTicks(2783));
         }
     }
 }

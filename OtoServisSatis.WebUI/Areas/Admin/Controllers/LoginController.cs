@@ -22,42 +22,46 @@ namespace OtoServisSatis.WebUI.Areas.Admin.Controllers
         {
             return View();
         }
+
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync();
             return Redirect("/Admin/Login");
         }
+
         [HttpPost]
-        public async Task<IActionResult> IndexAsync(string email,string password)
+        public async Task<IActionResult> IndexAsync(string email, string password)
         {
             try
             {
-                var account = _service.Get(k => k.Email == email && k.Sifre==password && k.AktifMi==true);
-                if (account == null) 
+                var account = _service.Get(k => k.Email == email && k.Sifre == password && k.AktifMi == true);
+                if (account == null)
                 {
-                    TempData["Mesaj"] = "Giriş Başarısız!";
+                    TempData["Mesaj"] = "Giriş Başarısız";
                 }
-                else 
+                else
                 {
-                    var rol = _serviceRol.Get(r => r.Id == account.RolId);
+                    var rol = _serviceRol.Get(r=>r.Id == account.RolId);
                     var claims = new List<Claim>()
                     {
-                        new Claim(ClaimTypes.Name, account.Adi)
+                        new Claim(ClaimTypes.Name, account.Adi)                        
                     };
                     if (rol is not null)
                     {
                         claims.Add(new Claim("Role", rol.Adi));
                     }
-                    var userIdentity= new ClaimsIdentity(claims, "Login");
+                    var userIdentity = new ClaimsIdentity(claims, "Login");
                     ClaimsPrincipal principal = new ClaimsPrincipal(userIdentity);
                     await HttpContext.SignInAsync(principal);
                     return Redirect("/Admin");
+                        
                 }
             }
             catch (Exception)
             {
                 TempData["Mesaj"] = "Hata Oluştu!";
             }
+
             return View();
         }
     }
