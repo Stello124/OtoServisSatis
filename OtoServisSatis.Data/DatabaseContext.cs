@@ -15,7 +15,7 @@ namespace OtoServisSatis.Data
         public DbSet<Slider> Sliders { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=(localDb)\MSSQLLocalDb;Database=OtoServisNetCore;Persist Security Info=True;User ID=sa;Password=123;Trusted_Connection=True;TrustServerCertificate=Yes;MultipleActiveResultSets=true");
+            optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=OtoServisSatis;Persist Security Info=True;Trusted_Connection=True;TrustServerCertificate=Yes;MultipleActiveResultSets=true");
             base.OnConfiguring(optionsBuilder);
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
