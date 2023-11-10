@@ -16,6 +16,7 @@ namespace OtoServisSatis.WebUI.Areas.Admin.Controllers
         {
             _service = service;
         }
+
         // GET: SlidersController
         public async Task<ActionResult> Index()
         {
@@ -62,7 +63,7 @@ namespace OtoServisSatis.WebUI.Areas.Admin.Controllers
         // POST: SlidersController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit(int id, Slider collection, IFormFile Resim)
+        public async Task<ActionResult> Edit(int id, Slider collection, IFormFile? Resim)
         {
             try
             {

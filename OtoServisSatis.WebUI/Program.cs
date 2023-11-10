@@ -13,7 +13,7 @@ builder.Services.AddDbContext<DatabaseContext>();
 builder.Services.AddTransient(typeof(IService<>), typeof(Service<>));
 builder.Services.AddTransient<ICarService, CarService>();
 
-builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(x =>
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(x=>
 {
     x.LoginPath = "/Admin/Login";
     x.AccessDeniedPath = "/AccessDenied";
@@ -23,7 +23,7 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
     x.Cookie.IsEssential = true;
 });
 
-builder.Services.AddAuthorization( x =>
+builder.Services.AddAuthorization(x =>
 {
     x.AddPolicy("AdminPolicy", policy => policy.RequireClaim("Role", "Admin"));
     x.AddPolicy("UserPolicy", policy => policy.RequireClaim("Role", "User"));
@@ -43,6 +43,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
 app.UseAuthentication();
 app.UseAuthorization();
 

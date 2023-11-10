@@ -140,7 +140,7 @@ namespace OtoServisSatis.Data.Migrations
                             Id = 1,
                             Adi = "Admin",
                             AktifMi = true,
-                            EklenmeTarihi = new DateTime(2023, 11, 9, 14, 13, 34, 131, DateTimeKind.Local).AddTicks(7701),
+                            EklenmeTarihi = new DateTime(2023, 11, 9, 14, 13, 26, 387, DateTimeKind.Local).AddTicks(5483),
                             Email = "admin@otoservissatis.tc",
                             KullaniciAdi = "admin",
                             RolId = 1,

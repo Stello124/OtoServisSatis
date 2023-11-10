@@ -8,8 +8,8 @@ namespace OtoServisSatis.WebUI.Controllers
 {
     public class HomeController : Controller
     {
-       private readonly IService<Slider> _service;
-       private readonly ICarService _serviceArac;
+        private readonly IService<Slider> _service;
+        private readonly ICarService _serviceArac;
 
         public HomeController(IService<Slider> service, ICarService serviceArac)
         {
@@ -23,8 +23,7 @@ namespace OtoServisSatis.WebUI.Controllers
             {
                 Sliders = await _service.GetAllAsync(),
                 Araclar = await _serviceArac.GetCustomCarList(a => a.Anasayfa)
-            };
-             
+            };          
             return View(model);
         }
 
@@ -32,6 +31,7 @@ namespace OtoServisSatis.WebUI.Controllers
         {
             return View();
         }
+
         [Route("AccessDenied")]
         public IActionResult AccessDenied()
         {

@@ -37,7 +37,7 @@ namespace OtoServisSatis.Data.Migrations
                 keyColumn: "Id",
                 keyValue: 1,
                 column: "EklenmeTarihi",
-                value: new DateTime(2023, 11, 8, 15, 50, 32, 588, DateTimeKind.Local).AddTicks(9195));
+                value: new DateTime(2023, 11, 8, 15, 50, 35, 292, DateTimeKind.Local).AddTicks(2783));
         }
 
         /// <inheritdoc />

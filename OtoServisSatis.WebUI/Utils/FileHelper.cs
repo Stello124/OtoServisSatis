@@ -1,6 +1,4 @@
-﻿using System.Drawing;
-
-namespace OtoServisSatis.WebUI.Utils
+﻿namespace OtoServisSatis.WebUI.Utils
 {
     public class FileHelper
     {
@@ -14,6 +12,7 @@ namespace OtoServisSatis.WebUI.Utils
                 using var stream = new FileStream(directory, FileMode.Create);
                 await formFile.CopyToAsync(stream);
             }
+
             return fileName;
         }
     }
