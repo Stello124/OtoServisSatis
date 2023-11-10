@@ -23,7 +23,8 @@ namespace OtoServisSatis.WebUI.Controllers
             {
                 Sliders = await _service.GetAllAsync(),
                 Araclar = await _serviceArac.GetCustomCarList(a => a.Anasayfa)
-            };          
+            };
+
             return View(model);
         }
 
